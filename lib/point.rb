@@ -13,7 +13,7 @@ module Geometry
     end
 
     def ==(another_point)
-      self.x == another_point.x && self.y == another_point.y
+      self.x === another_point.x && self.y === another_point.y
     end
   end
 end

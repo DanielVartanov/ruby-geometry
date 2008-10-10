@@ -1,6 +1,6 @@
 require 'test/unit'
 require 'geometry'
- 
+
 class InitializeTest < Test::Unit::TestCase
   include Geometry
   
