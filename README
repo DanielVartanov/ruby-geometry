@@ -1,23 +1,31 @@
 Geometry in Ruby
 ================
 
-Implementation of basic geometry algorithms and types.
+Implementation of basic 2D geometry algorithms in Ruby.
 
 Already implemented algorithms
 ==============================
+  * Do segments intersect? { Segment.intersects_with? }
+
   * Does segment contain point?  { Segment.contains_point? }
+
   * Are segments parralel? { Segment.parallel_to? }
+
   * Are vectors collinear? { Vector.collinear_with? }
+
   * Vectors cross product (outer product, vector product) { Vector.cross_product }
+
   * Vectors scalar product (inner product, dot product) { Vector.scalar_product }
+
   * Segment length { Segment.length }
+
   * Vector modulus { Vector.modulus }
+
   * Euclid distance { Geometry.distance }
 
 Coming up
 =========
-  
-  * Do segments intersect?
+    
   * Segments intersection point
   * Trivial vector arithmetics
   * Does polygon contain point?

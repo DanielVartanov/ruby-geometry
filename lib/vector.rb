@@ -10,11 +10,7 @@ module Geometry
     
     def ==(vector)
       @x === vector.x && @y === vector.y
-    end
-    
-    def collinear_with?(vector)
-      @x.to_f / vector.x === @y.to_f / vector.y
-    end
+    end        
     
     # Modulus of vector. Also known as length, size or norm
     def modulus      
@@ -32,6 +28,10 @@ module Geometry
 
     def scalar_product(vector)
       @x * vector.x + @y * vector.y
+    end
+    
+    def collinear_with?(vector)
+      cross_product(vector) === 0
     end
   end
 end
