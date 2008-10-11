@@ -22,6 +22,14 @@ module Geometry
       self.to_vector.collinear_with?(segment.to_vector)
     end
 
+    def intersects_with?(segment)
+      
+    end
+
+    def length
+      Geometry.distance(@point1, @point2)
+    end
+
     def to_vector
       Vector.new(@point2.x - @point1.x, @point2.y - @point1.y)
     end

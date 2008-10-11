@@ -5,13 +5,16 @@ Implementation of basic geometry algorithms and types.
 
 Already implemented algorithms
 ==============================
-  * Does segment contain point? (Segment.contains_point?)
-  * Are segments parralel? (Segment.parallel_to?)
-  * Are vectors collinear? (Vector.collinear_with?)
-  * Euclid distance (Geometry.distance)
+  * Does segment contain point?  { Segment.contains_point? }
+  * Are segments parralel? { Segment.parallel_to? }
+  * Are vectors collinear? { Vector.collinear_with? }
+  * Segment length { Segment.length }
+  * Vector modulus { Vector.modulus }
+  * Euclid distance { Geometry.distance }
 
 Coming up
-=========  
+=========
+  
   * Do segments intersect?
   * Segments intersection point
   * Trivial vector arithmetics
