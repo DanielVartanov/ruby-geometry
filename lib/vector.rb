@@ -11,5 +11,9 @@ module Geometry
     def collinear_with?(vector)
       @x.to_f / vector.x === @y.to_f / vector.y
     end
+    
+    def ==(vector)
+      @x === vector.x && @y === vector.y
+    end
   end
 end

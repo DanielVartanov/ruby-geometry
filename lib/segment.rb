@@ -17,5 +17,13 @@ module Geometry
       Geometry.distance(@point1, @point2) ===
         Geometry.distance(@point1, point) + Geometry.distance(point, @point2)
     end
+
+    def parallel_to?(segment)
+      self.to_vector.collinear_with?(segment.to_vector)
+    end
+
+    def to_vector
+      Vector.new(@point2.x - @point1.x, @point2.y - @point1.y)
+    end
   end
 end
