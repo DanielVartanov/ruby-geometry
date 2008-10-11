@@ -12,7 +12,7 @@ module Geometry
       self.new(Point.new_by_array(point1_coordinates), 
                Point.new_by_array(point2_coordinates))
     end
-
+ 
     def contains_point?(point)      
       Geometry.distance(@point1, @point2) ===
         Geometry.distance(@point1, point) + Geometry.distance(point, @point2)

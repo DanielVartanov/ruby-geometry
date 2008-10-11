@@ -57,6 +57,5 @@ class ContainsPointTest < Test::Unit::TestCase
     segment = Segment.new_by_arrays([2, 2], [4, 4])
 
     assert ! segment.contains_point?(point)
-  end
-  
+  end  
 end
