@@ -57,5 +57,12 @@ class IntersectsTest < Test::Unit::TestCase
     
     assert segment1.intersects_with?(segment2)
   end
+  
+  def test_segments_overlap
+    segment1 = Segment.new_by_arrays([0, 0], [2, 2])
+    segment2 = Segment.new_by_arrays([1, 1], [3, 3])
+    
+    assert segment1.intersects_with?(segment2)
+  end
 
 end
