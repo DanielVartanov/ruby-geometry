@@ -20,5 +20,18 @@ module Geometry
     def modulus      
       Math.hypot(@x ,@y)
     end
+
+    # z-coordinate of cross product (also known as vector product or outer product)
+    # It is positive if other vector should be turned counter-clockwise in order to superpose them.
+    # It is negetive if other vector should be turned clockwise in order to superpose them.
+    # It is zero when vectors are collinear.
+    # Remark: x- and y- coordinates of plane vectors cross product are zero
+    def cross_product(vector)
+      @x * vector.y - @y * vector.x
+    end
+
+    def scalar_product(vector)
+      @x * vector.x + @y * vector.y
+    end
   end
 end
