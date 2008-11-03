@@ -26,5 +26,17 @@ module Geometry
     def collinear_with?(vector)
       cross_product(vector) === 0
     end
+
+    def +(vector)
+      Vector.new(x + vector.x, y + vector.y)
+    end
+
+    def -(vector)
+      self + vector * -1
+    end
+
+    def *(scalar)      
+      Vector.new(x * scalar, y * scalar)
+    end
   end
 end
