@@ -4,6 +4,16 @@ Geometry in Ruby
 Implementation of basic 2D geometry algorithms in Ruby.
 
 
+Defined geometry objects
+========================
+
+* Point
+
+* Segment
+
+* Vector
+
+
 Already implemented algorithms
 ==============================
 
@@ -27,14 +37,31 @@ Already implemented algorithms
 
   * Euclid distance { Geometry.distance }
 
+
 In progress
 ===========
 
   * Trivial vector arithmetics
 
+
 Coming up
 =========        
 
   * Does polygon contain given point?
+
+  * Do polygons intersect?
+
+  * Rectangular bounds of polygon
+
+  * Area of polygon
+
+  * Does circle contain given point?
+
+  * Do circles intersect?
+
+  * Area of circle
+
+  * Making a ruby gem
+  
 
 Copyright (c) 2008 Daniel Vartanov, released under the MIT license
