@@ -13,7 +13,7 @@ Already implemented algorithms
 
   * Does segment contain given point?  { Segment.contains_point? }
 
-  * Are segments parralel? { Segment.parallel_to? }
+  * Are segments parallel? { Segment.parallel_to? }
 
   * Are vectors collinear? { Vector.collinear_with? }
 
