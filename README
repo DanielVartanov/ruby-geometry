@@ -7,11 +7,11 @@ Implementation of basic 2D geometry algorithms in Ruby.
 Defined geometry objects
 ========================
 
-* Point
+  * Point
 
-* Segment
+  * Segment
 
-* Vector
+  * Vector
 
 
 Already implemented algorithms
@@ -35,13 +35,9 @@ Already implemented algorithms
 
   * Vector modulus { Vector.modulus }
 
+  * Trivial vector arithmetics: summation, subtraction, vector-number multiplication { Vector.+(vector); Vector.-(vector); Vector.*(numeric) }
+
   * Euclid distance { Geometry.distance }
-
-
-In progress
-===========
-
-  * Trivial vector arithmetics
 
 
 Coming up

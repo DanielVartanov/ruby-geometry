@@ -38,5 +38,9 @@ module Geometry
     def *(scalar)      
       Vector.new(x * scalar, y * scalar)
     end
+
+    def coerce(scalar)
+      [self, scalar]
+    end
   end
 end
