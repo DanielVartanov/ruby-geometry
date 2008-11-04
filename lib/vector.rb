@@ -39,8 +39,12 @@ module Geometry
       Vector.new(x * scalar, y * scalar)
     end
 
-    def coerce(scalar)
-      [self, scalar]
+    def coerce(scalar)      
+      if scalar.is_a?(Numeric)
+        [self, scalar]
+      else
+        raise ArgumentError, "Cannot coerce #{scalar.inspect}"
+      end             
     end
   end
 end
