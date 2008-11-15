@@ -17,6 +17,8 @@ Defined geometry objects
 Already implemented algorithms
 ==============================
 
+  * Do segments overlap? { Segments.overlaps? }
+
   * Do segments lie on one line? { Segment.lies_on_one_line_with? }
 
   * Do segments intersect? { Segment.intersects_with? }
@@ -45,15 +47,17 @@ Already implemented algorithms
 Coming up
 =========
 
+  * Is polygon self-intersecting?
+
+  * Area of polygon
+
   * Is polygon convex?  
 
   * Do polygons intersect?
 
   * Does polygon contain given point?
 
-  * Rectangular bounds of polygon
-
-  * Area of polygon
+  * Rectangular bounds of polygon  
 
   * Does circle contain given point?
 

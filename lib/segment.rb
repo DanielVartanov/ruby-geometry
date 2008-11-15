@@ -33,19 +33,20 @@ module Geometry
       to_vector.collinear_with?(segment.to_vector)
     end
 
-    def intersects_with?(segment)
-      self.class.have_intersecting_bounds?(self, segment) &&
-        lies_on_line_intersecting?(segment) &&
-        segment.lies_on_line_intersecting?(self)
-    end
-
     def lies_on_one_line_with?(segment)
       Segment.new(point1, segment.point1).parallel_to?(self) &&
         Segment.new(point1, segment.point2).parallel_to?(self)
     end
 
+    def intersects_with?(segment)
+      Segment.have_intersecting_bounds?(self, segment) &&
+        lies_on_line_intersecting?(segment) &&
+        segment.lies_on_line_intersecting?(self)
+    end
+    
     def overlaps?(segment)
-      return false unless lies_on_one_line_with?(segment)      
+      Segment.have_intersecting_bounds?(self, segment) &&
+        lies_on_one_line_with?(segment)
     end
     
     def intersection_point_with(segment)
