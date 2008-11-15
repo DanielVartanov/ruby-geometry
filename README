@@ -41,11 +41,13 @@ Already implemented algorithms
 
 
 Coming up
-=========        
+=========
 
-  * Does polygon contain given point?
+  * Is polygon convex?  
 
   * Do polygons intersect?
+
+  * Does polygon contain given point?
 
   * Rectangular bounds of polygon
 

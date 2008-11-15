@@ -32,7 +32,7 @@ module Geometry
     end
 
     def -(vector)
-      self + vector * -1
+      self + (-1) * vector
     end
 
     def *(scalar)      
@@ -43,7 +43,7 @@ module Geometry
       if scalar.is_a?(Numeric)
         [self, scalar]
       else
-        raise ArgumentError, "Cannot coerce #{scalar.inspect}"
+        raise ArgumentError, "Vector: cannot coerce #{scalar.inspect}"
       end             
     end
   end

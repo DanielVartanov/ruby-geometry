@@ -1,0 +1,35 @@
+== Auxiliary features
+* Methods requests tagging
+
+If algorithm requires some state or property of object, it should be tagged.
+Requirements should be checked before each method call (of course, info should
+be cached due to computational complexity of algorithms).
+Example:
+
+class Polygon
+
+  def convex?
+    ...
+  end
+
+  def self_intersecting?
+    ...
+  end
+
+  must_be :convex
+  must_not_be :self_intersecting
+  def contains_point?(point)
+    ... # code, which assumes, that polygon is convex and not self_intersecting
+  end
+
+== Algorithms
+
+* Polygon convexity
+* Polygons intersection
+* Polygon contains given point?
+* Rectangular bounds of polygon
+* Area of polygon
+* Does circle contain given point?
+* Do circles intersect?
+* Area of circle
+* Making a ruby gem
