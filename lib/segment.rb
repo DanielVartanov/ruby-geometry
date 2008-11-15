@@ -34,7 +34,9 @@ module Geometry
     end
 
     def intersects_with?(segment)
-      in_bounds_of?(segment) && segment.in_bounds_of?(self)
+      self.class.have_intersecting_bounds?(self, segment) &&
+        lies_on_line_intersecting?(segment) &&
+        segment.lies_on_line_intersecting?(self)
     end
 
     def lies_on_one_line_with?(segment)
@@ -63,7 +65,7 @@ module Geometry
       Point.new(x, y)
     end
 
-    def length
+    def length      
       Geometry.distance(point1, point2)
     end
 
@@ -71,12 +73,27 @@ module Geometry
       Vector.new(point2.x - point1.x, point2.y - point1.y)
     end        
 
-  private
+  protected
 
-    # Returns true if lays on line, intersecting with given segment
-    def in_bounds_of?(segment)
-      vector_to_first_endpoint = Segment.new(point1, segment.point1).to_vector
-      vector_to_second_endpoint = Segment.new(point1, segment.point2).to_vector
+    def self.have_intersecting_bounds?(segment1, segment2)
+      intersects_on_x_axis =
+        (segment1.leftmost_endpoint.x < segment2.rightmost_endpoint.x ||
+        segment1.leftmost_endpoint.x == segment2.rightmost_endpoint.x) &&
+        (segment2.leftmost_endpoint.x < segment1.rightmost_endpoint.x ||
+        segment2.leftmost_endpoint.x == segment1.rightmost_endpoint.x)
+    
+      intersects_on_y_axis =
+        (segment1.bottommost_endpoint.y < segment2.topmost_endpoint.y ||
+        segment1.bottommost_endpoint.y == segment2.topmost_endpoint.y) &&
+        (segment2.bottommost_endpoint.y < segment1.topmost_endpoint.y ||
+        segment2.bottommost_endpoint.y == segment1.topmost_endpoint.y)
+
+      intersects_on_x_axis && intersects_on_y_axis
+    end
+
+    def lies_on_line_intersecting?(segment)
+      vector_to_first_endpoint = Segment.new(self.point1, segment.point1).to_vector
+      vector_to_second_endpoint = Segment.new(self.point1, segment.point2).to_vector
 
       #FIXME: '>=' and '<=' method of Fixnum and Float should be overriden too (take precision into account)
       # there is a rare case, when this method is wrong due to precision

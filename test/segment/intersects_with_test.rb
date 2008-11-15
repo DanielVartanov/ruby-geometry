@@ -57,6 +57,14 @@ class IntersectsTest < Test::Unit::TestCase
 
     assert ! segment1.intersects_with?(segment2)
   end
+
+  # |------*------|
+  def test_segments_parallel_and_have_common_endpoint
+    segment1 = Segment.new_by_arrays([0, 0], [1, 0])
+    segment2 = Segment.new_by_arrays([1, 0], [2, 0])
+
+    assert segment1.intersects_with?(segment2)
+  end
   
   # |----|===|----|
   def test_segments_overlap
@@ -77,7 +85,7 @@ class IntersectsTest < Test::Unit::TestCase
   def test_segments_lie_on_one_line
     segment1 = Segment.new_by_arrays([0, 0], [1, 0])
     segment2 = Segment.new_by_arrays([2, 0], [3, 0])
-    
+
     assert ! segment1.intersects_with?(segment2)
   end
 
