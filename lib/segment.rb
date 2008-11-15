@@ -7,6 +7,22 @@ module Geometry
       self.new(Point.new_by_array(point1_coordinates), 
                Point.new_by_array(point2_coordinates))
     end
+
+    def leftmost_endpoint
+      ((point1.x <=> point2.x) == -1) ? point1 : point2
+    end
+
+    def rightmost_endpoint
+      ((point1.x <=> point2.x) == 1) ? point1 : point2
+    end
+
+    def topmost_endpoint
+      ((point1.y <=> point2.y) == 1) ? point1 : point2
+    end
+
+    def bottommost_endpoint
+      ((point1.y <=> point2.y) == -1) ? point1 : point2
+    end
  
     def contains_point?(point)      
       Geometry.distance(point1, point2) ===
@@ -24,6 +40,10 @@ module Geometry
     def lies_on_one_line_with?(segment)
       Segment.new(point1, segment.point1).parallel_to?(self) &&
         Segment.new(point1, segment.point2).parallel_to?(self)
+    end
+
+    def overlaps?(segment)
+      return false unless lies_on_one_line_with?(segment)      
     end
     
     def intersection_point_with(segment)
@@ -51,7 +71,7 @@ module Geometry
       Vector.new(point2.x - point1.x, point2.y - point1.y)
     end        
 
-  protected
+  private
 
     # Returns true if lays on line, intersecting with given segment
     def in_bounds_of?(segment)

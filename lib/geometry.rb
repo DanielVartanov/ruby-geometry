@@ -1,6 +1,7 @@
 require 'point'
 require 'segment'
 require 'vector'
+require 'polygon'
 
 module Geometry
   include Math
