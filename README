@@ -17,6 +17,8 @@ Defined geometry objects
 Already implemented algorithms
 ==============================
 
+  * Do segments lie on one line? { Segment.lies_on_one_line_with? }
+
   * Do segments intersect? { Segment.intersects_with? }
 
   * Segments intersection point { Segment.intersection_point_with }

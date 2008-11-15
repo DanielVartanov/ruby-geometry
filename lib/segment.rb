@@ -14,26 +14,31 @@ module Geometry
     end
 
     def parallel_to?(segment)
-      self.to_vector.collinear_with?(segment.to_vector)
+      to_vector.collinear_with?(segment.to_vector)
     end
 
     def intersects_with?(segment)
-      self.in_bounds_of?(segment) && segment.in_bounds_of?(self)
+      in_bounds_of?(segment) && segment.in_bounds_of?(self)
+    end
+
+    def lies_on_one_line_with?(segment)
+      Segment.new(point1, segment.point1).parallel_to?(self) &&
+        Segment.new(point1, segment.point2).parallel_to?(self)
     end
     
     def intersection_point_with(segment)
-      raise SegmentsDoNotIntersect unless self.intersects_with?(segment)
-      raise SegmentsOverlap if self.intersects_with?(segment) && self.parallel_to?(segment)
+      raise SegmentsDoNotIntersect unless intersects_with?(segment)
+      raise SegmentsOverlap if overlaps?(segment)
       
-      numerator = (segment.point1.y - self.point1.y) * (segment.point1.x - segment.point2.x) -
-        (segment.point1.y - segment.point2.y) * (segment.point1.x - self.point1.x);
-      denominator = (self.point2.y - self.point1.y) * (segment.point1.x - segment.point2.x) - 
-        (segment.point1.y - segment.point2.y) * (self.point2.x - self.point1.x);
+      numerator = (segment.point1.y - point1.y) * (segment.point1.x - segment.point2.x) -
+        (segment.point1.y - segment.point2.y) * (segment.point1.x - point1.x);
+      denominator = (point2.y - point1.y) * (segment.point1.x - segment.point2.x) - 
+        (segment.point1.y - segment.point2.y) * (point2.x - point1.x);
 
       t = numerator.to_f / denominator;
       
-      x = self.point1.x + t * (self.point2.x - self.point1.x)
-      y = self.point1.y + t * (self.point2.y - self.point1.y)            
+      x = point1.x + t * (point2.x - point1.x)
+      y = point1.y + t * (point2.y - point1.y)            
       
       Point.new(x, y)
     end
