@@ -58,6 +58,8 @@ module Geometry
         end
       end
 
+      return nil if horizontal? and other.horizontal?
+
       return x_intercept if vertical?
       return other.x_intercept if other.vertical?
 
