@@ -1,7 +1,7 @@
 require 'test/unit'
 require 'geometry'
 
-class YInterceptTest < Test::Unit::TestCase
+class XInterceptTest < Test::Unit::TestCase
   include Geometry
 
   def setup
