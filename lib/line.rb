@@ -41,6 +41,10 @@ module Geometry
       end
     end
 
+    def horizontal?
+      slope == 0
+    end
+
     def intersect_x(other)
       if vertical? and other.vertical?
         if x_intercept == other.x_intercept
