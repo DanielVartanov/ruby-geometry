@@ -70,5 +70,12 @@ module Geometry
       # the lines are identical
       d_intercept / d_slope
     end
+
+    def angle_to(other)
+      # return absolute difference between angles to horizontal of self and other
+      sa = Math::atan(slope)
+      oa = Math::atan(other.slope)
+      (sa-oa).abs
+    end
   end
 end
