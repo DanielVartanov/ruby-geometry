@@ -34,4 +34,11 @@ class XInterceptTest < Test::Unit::TestCase
       assert_equal xi, line.x_intercept
     end
   end
+
+  def test_horizontals
+    [-1, 0, 1].each do |yo|
+      line = Line.new(Point.new(0, yo), Point.new(1, yo))
+      assert line.x_intercept.nil?
+    end
+  end
 end

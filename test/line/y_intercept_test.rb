@@ -34,4 +34,11 @@ class YInterceptTest < Test::Unit::TestCase
       assert_equal yi, line.y_intercept
     end
   end
+
+  def test_verticals
+    [-1, 0, 1].each do |xo|
+      line = Line.new(Point.new(xo, 0), Point.new(xo, 1))
+      assert line.y_intercept.nil?
+    end
+  end
 end

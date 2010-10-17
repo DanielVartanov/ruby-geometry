@@ -15,12 +15,16 @@ module Geometry
     end
 
     def y_intercept
+      return nil if vertical?
+
       # compute change in y between point1 and the origin
       dy = point1.x * slope
       point1.y - dy
     end
 
     def x_intercept
+      return nil if horizontal?
+
       # compute change in x between point1 and the origin
       dx = point1.y / slope
       point1.x - dx
