@@ -33,13 +33,6 @@ module Geometry
       slope == other.slope
     end
     
-    def x_at(y)
-      nan = 0.0/0.0 
-      return nan if @slope == 0
-
-      (y - y_intercept)/slope
-    end
-
     def vertical?
       if slope.infinite?
         return true
