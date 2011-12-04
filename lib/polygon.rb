@@ -9,5 +9,21 @@ module Geometry
 
       edges << Segment.new(vertices.last, vertices.first)
     end
+
+    def bounding_box
+      leftbottom = Point vertices.map(&:x).min, vertices.map(&:y).min
+      righttop = Point vertices.map(&:x).max, vertices.map(&:y).max
+      
+      BoundingBox.new leftbottom, righttop
+    end
+
+    def contains?(point)
+      point_in_polygon = PointInPolygon.new(point, self)
+      point_in_polygon.inside? || point_in_polygon.on_the_boundary?
+    end
   end
+end
+
+def Polygon(vertices)
+  Geometry::Polygon.new(vertices)
 end

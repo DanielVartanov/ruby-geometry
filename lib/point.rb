@@ -9,3 +9,7 @@ module Geometry
     end
   end
 end
+
+def Point(x, y)
+  Geometry::Point.new(x, y)
+end

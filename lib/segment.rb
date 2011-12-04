@@ -103,3 +103,7 @@ module Geometry
     end
   end
 end
+
+def Segment(point1, point2)
+  Geometry::Segment.new point1, point2
+end
