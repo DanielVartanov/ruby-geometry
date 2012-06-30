@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = "ruby-geometry"
-  s.version = "0.0.3"
+  s.version = "0.0.4"
   s.author = "Daniel Vartanov"
   s.email = "daniel.vartanov@gmail.com"
   s.homepage = "http://github.com/DanielVartanov/ruby-geometry"
