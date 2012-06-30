@@ -1,6 +1,6 @@
 module Geometry
   class PointInPolygon < Struct.new(:point, :polygon)
-    extend ActiveSupport::Memoizable
+    extend Memoist
     
     def inside?
       point_location == :inside

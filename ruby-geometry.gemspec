@@ -12,4 +12,9 @@ Gem::Specification.new do |s|
   s.require_path = "lib"
   s.test_files = FileList["{test}/**/*test.rb"].to_a
   s.has_rdoc = false
+
+  s.add_dependency('activesupport')
+  s.add_dependency('memoist')
+
+  s.add_development_dependency('rake')
 end

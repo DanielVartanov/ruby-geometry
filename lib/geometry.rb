@@ -1,5 +1,5 @@
 require "active_support/core_ext/module/delegation"
-require "active_support/memoizable"
+require "memoist"
 
 require 'point'
 require 'segment'
