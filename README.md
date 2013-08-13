@@ -4,6 +4,13 @@ Geometry in Ruby
 Implementation of basic 2D geometry algorithms in Ruby.
 
 
+Installation
+============
+```ruby
+gem 'ruby-geometry', require: 'geometry'
+```
+
+
 Defined geometry objects
 ========================
 
