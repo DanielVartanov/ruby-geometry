@@ -66,6 +66,10 @@ module Geometry
       Point.new(x, y)
     end
 
+    def distance_to(point)
+      Line.new_by_arrays([point1.x, point1.y], [point2.x, point2.y]).distance_to(point)
+    end
+
     def length      
       Geometry.distance(point1, point2)
     end

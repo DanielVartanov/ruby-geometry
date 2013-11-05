@@ -77,5 +77,17 @@ module Geometry
       oa = Math::atan(other.slope)
       (sa-oa).abs
     end
+
+    def distance_to(point)
+      x0 = point.x
+      y0 = point.y
+
+      x1 = point1.x
+      x2 = point2.x
+      y1 = point1.y
+      y2 = point2.y
+
+      (((x2-x1)*(y1-y0))-((x1-x0)*(y2-y1))).abs/Math.sqrt((x2-x1)**2+(y2-y1)**2)
+    end
   end
 end
