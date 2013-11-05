@@ -21,6 +21,17 @@ module Geometry
       point_in_polygon = PointInPolygon.new(point, self)
       point_in_polygon.inside? || point_in_polygon.on_the_boundary?
     end
+
+    def area
+      sum = 0.0
+      (0..vertices.length-1).each do |i|
+        a = vertices[i-1]
+        b = vertices[i]
+
+        sum = sum + ((a.x * b.y) - (a.y * b.x))
+      end
+      (sum/2).abs
+    end
   end
 end
 
