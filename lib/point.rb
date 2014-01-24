@@ -7,9 +7,14 @@ module Geometry
     def ==(another_point)
       x === another_point.x && y === another_point.y
     end
+
+    def to_vector
+      Vector.new(x, y)
+    end
   end
 end
 
 def Point(x, y)
   Geometry::Point.new(x, y)
 end
+
