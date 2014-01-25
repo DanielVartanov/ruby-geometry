@@ -67,7 +67,26 @@ module Geometry
     end
 
     def distance_to(point)
-      Line.new_by_arrays([point1.x, point1.y], [point2.x, point2.y]).distance_to(point)
+      q = point.to_vector
+      p1 = point1.to_vector
+      p2 = point2.to_vector
+
+      u = p2 - p1
+      v = q - p1
+
+      a = u.scalar_product(v)
+      if a < 0
+        p = p1
+      else
+        b = u.scalar_product(u)
+        if a > b
+          p = p2
+        else
+          p = p1 + (a.to_f / b * u)
+        end
+      end
+
+      return Geometry.distance(q, p)
     end
 
     def length      
