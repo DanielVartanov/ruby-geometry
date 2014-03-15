@@ -2,3 +2,4 @@ nbproject
 bin/*
 
 .idea
+/Gemfile.lock

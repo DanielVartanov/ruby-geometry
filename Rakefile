@@ -1,6 +1,7 @@
 require 'rake/dsl_definition'
 require 'rake'
 require 'rake/testtask'
+require 'bundler/gem_tasks'
 
 task :default => :test
 
