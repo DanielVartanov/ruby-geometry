@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class HorizontalTest < Test::Unit::TestCase
+class HorizontalTest < MiniTest::Unit::TestCase
   include Geometry
 
   def test_horizontal

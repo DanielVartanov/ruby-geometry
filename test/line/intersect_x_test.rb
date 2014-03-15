@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class IntersectXTest < Test::Unit::TestCase
+class IntersectXTest < MiniTest::Unit::TestCase
   include Geometry
 
   def test_vertical_non_overlapping

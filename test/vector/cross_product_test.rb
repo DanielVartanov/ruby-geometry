@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class CrossProductTest < Test::Unit::TestCase
+class CrossProductTest < MiniTest::Unit::TestCase
   include Geometry
 
   def test_positive

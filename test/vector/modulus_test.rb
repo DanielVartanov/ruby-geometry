@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class ModulusTest < Test::Unit::TestCase
+class ModulusTest < MiniTest::Unit::TestCase
   include Geometry
 
   def test_parallel_to_axis

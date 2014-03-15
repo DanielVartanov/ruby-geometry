@@ -3,11 +3,11 @@ require 'rake'
 require 'rake/testtask'
 require 'bundler/gem_tasks'
 
-task :default => :test
+task default: :test
 
 Rake::TestTask.new do |t|
-  t.libs = ["lib"]
-  t.warning = true
+  t.libs << "lib"
+  t.libs << "test"
+  t.test_files = FileList['test/**/*_test.rb']
   t.verbose = true
-  t.test_files = FileList['test/*_test.rb']
 end

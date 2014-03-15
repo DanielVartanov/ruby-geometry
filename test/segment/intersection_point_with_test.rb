@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class IntersectionPointWithTest < Test::Unit::TestCase
+class IntersectionPointWithTest < MiniTest::Unit::TestCase
   include Geometry
   
   def test_regular_case
@@ -22,7 +22,7 @@ class IntersectionPointWithTest < Test::Unit::TestCase
     segment1 = Segment.new_by_arrays([0, 0], [0, 2])
     segment2 = Segment.new_by_arrays([1, 1], [2, 1])
 
-    assert_raise SegmentsDoNotIntersect do
+    assert_raises SegmentsDoNotIntersect do
       segment1.intersection_point_with(segment2)
     end
   end
@@ -31,7 +31,7 @@ class IntersectionPointWithTest < Test::Unit::TestCase
     segment1 = Segment.new_by_arrays([0, 0], [2, 2])
     segment2 = Segment.new_by_arrays([1, 0], [3, 2])
 
-    assert_raise SegmentsDoNotIntersect do
+    assert_raises SegmentsDoNotIntersect do
       segment1.intersection_point_with(segment2)
     end
   end
@@ -40,7 +40,7 @@ class IntersectionPointWithTest < Test::Unit::TestCase
     segment1 = Segment.new_by_arrays([0, 0], [2, 2])
     segment2 = Segment.new_by_arrays([1, 1], [3, 3])
 
-    assert_raise SegmentsOverlap do
+    assert_raises SegmentsOverlap do
       segment1.intersection_point_with(segment2)
     end
   end

@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class CollinearWithTest < Test::Unit::TestCase
+class CollinearWithTest < MiniTest::Unit::TestCase
   include Geometry
 
   def test_vectors_are_collinear

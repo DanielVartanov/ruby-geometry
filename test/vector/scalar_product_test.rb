@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class ScalarProductTest < Test::Unit::TestCase
+class ScalarProductTest < MiniTest::Unit::TestCase
   include Geometry
 
   def test_vectors_are_perpendicular

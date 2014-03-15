@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class SlopeTest < Test::Unit::TestCase
+class SlopeTest < MiniTest::Unit::TestCase
   include Geometry
 
   def setup

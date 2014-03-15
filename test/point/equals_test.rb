@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
  
-class EqualsTest < Test::Unit::TestCase
+class EqualsTest < MiniTest::Unit::TestCase
   include Geometry
 
   def test_equal    

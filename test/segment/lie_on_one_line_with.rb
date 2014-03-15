@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class IntersectsTest < Test::Unit::TestCase
+class IntersectsTest < MiniTest::Unit::TestCase
   include Geometry
 
   def test_segments_parralel_but_on_different_lines

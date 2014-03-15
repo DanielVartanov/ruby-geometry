@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class EdgesTest < Test::Unit::TestCase
+class EdgesTest < MiniTest::Unit::TestCase
   include Geometry
   
 #  +-----+

@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class AngleToTest < Test::Unit::TestCase
+class AngleToTest < MiniTest::Unit::TestCase
   include Geometry
 
   def test_angle_to_self

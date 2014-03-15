@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class VerticalTest < Test::Unit::TestCase
+class VerticalTest < MiniTest::Unit::TestCase
   include Geometry
 
   def test_vertical

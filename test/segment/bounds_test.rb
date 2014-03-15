@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class BoundsTest < Test::Unit::TestCase
+class BoundsTest < MiniTest::Unit::TestCase
   include Geometry
 
   def setup

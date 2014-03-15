@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class ToVectorTest < Test::Unit::TestCase
+class ToVectorTest < MiniTest::Unit::TestCase
   include Geometry
 
   def test_regular_case

@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class BoundingBoxTest < Test::Unit::TestCase
+class BoundingBoxTest < MiniTest::Unit::TestCase
   include Geometry
 
   def test_rectangle

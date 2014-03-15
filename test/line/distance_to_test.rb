@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class DistanceToTest < Test::Unit::TestCase
+class DistanceToTest < MiniTest::Unit::TestCase
   include Geometry
 
   def test_distance_to_point_on_line

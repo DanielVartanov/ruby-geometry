@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class ArithmeticsTest < Test::Unit::TestCase
+class ArithmeticsTest < MiniTest::Unit::TestCase
   include Geometry
 
   def test_summation

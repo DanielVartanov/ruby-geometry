@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'geometry'
 
-class ContainsPointTest < Test::Unit::TestCase
+class ContainsPointTest < MiniTest::Unit::TestCase
   include Geometry
 
   def test_convex
