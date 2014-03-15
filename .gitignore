@@ -1,5 +1,5 @@
 nbproject
 bin/*
-
+pkg
 .idea
-/Gemfile.lock
+Gemfile.lock
