@@ -28,47 +28,51 @@ Defined geometry objects
 Already implemented algorithms
 ==============================
 
-  * Do segments overlap? { Segments#overlaps? }
+  * Area of convex polygon `Polygon#area`
 
-  * Do segments lie on one line? { Segment#lies_on_one_line_with? }
+  * Distance from point to a line or segment `Line#distance_to(point)`, `Segment#distance_to(point)`
 
-  * Do segments intersect? { Segment#intersects_with? }
+  * Do segments overlap? `Segments#overlaps?`
 
-  * Segments intersection point { Segment#intersection_point_with }
+  * Do segments lie on one line? `Segment#lies_on_one_line_with?`
 
-  * Does segment contain given point?  { Segment#contains_point? }
+  * Do segments intersect? `Segment#intersects_with?`
 
-  * Are segments parallel? { Segment#parallel_to? }
+  * Segments intersection point `Segment#intersection_point_with`
 
-  * Are vectors collinear? { Vector#collinear_with? }
+  * Does segment contain given point?  `Segment#contains_point?`
 
-  * Vectors cross product (outer product, vector product) { Vector#cross_product }
+  * Are segments parallel? `Segment#parallel_to?`
 
-  * Vectors scalar product (inner product, dot product) { Vector#scalar_product }
+  * Are vectors collinear? `Vector#collinear_with?`
 
-  * Segment length { Segment#length }
+  * Vectors cross product (outer product, vector product) `Vector#cross_product`
 
-  * Vector modulus { Vector#modulus }
+  * Vectors scalar product (inner product, dot product) `Vector#scalar_product`
 
-  * Trivial vector arithmetics: summation, subtraction, vector-number multiplication { Vector#+(vector); Vector#-(vector); Vector#*(numeric) }
+  * Segment length `Segment#length`
 
-  * Euclid distance { Geometry#distance }
+  * Vector modulus `Vector#modulus`
 
-  * Line slope { Line#slope }
+  * Trivial vector arithmetics: summation, subtraction, vector-number multiplication `Vector#+(vector); Vector#-(vector); Vector#*(numeric)`
 
-  * Y-intercept of a line { Line#y_intercept }
+  * Euclid distance `Geometry#distance`
 
-  * X-intercept of a line { Line#x_intercept }
+  * Line slope `Line#slope`
 
-  * Are lines parallel? { Line#parallel_to? }
+  * Y-intercept of a line `Line#y_intercept`
 
-  * What x-value do lines intersect at? { Line#intersect_x }
+  * X-intercept of a line `Line#x_intercept`
 
-  * What is the angle between two lines? { Line#angle_to }
+  * Are lines parallel? `Line#parallel_to?`
 
-  * Rectangular bounds of polygon { Polygon#bounding_box }   
-  
-  * Does polygon contain a given point? { Polygon#contains? }
+  * What x-value do lines intersect at? `Line#intersect_x`
+
+  * What is the angle between two lines? `Line#angle_to`
+
+  * Rectangular bounds of polygon `Polygon#bounding_box`
+
+  * Does polygon contain a given point? `Polygon#contains?`
 
 
 Coming up
@@ -76,9 +80,7 @@ Coming up
 
   * Is polygon self-intersecting?
 
-  * Area of polygon
-
-  * Is polygon convex?  
+  * Is polygon convex?
 
   * Do polygons intersect?
 
@@ -86,7 +88,5 @@ Coming up
 
   * Do circles intersect?
 
-  * Area of circle
-  
 
 Copyright (c) 2008 Daniel Vartanov, released under the MIT license
