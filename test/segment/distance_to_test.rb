@@ -28,4 +28,10 @@ class DistanceToTest < MiniTest::Unit::TestCase
     assert_equal 1, segment.distance_to(point)
   end
 
+  def test_distance_to_point_segment
+    segment = Segment.new_by_arrays([0, 1], [0, 1])
+    point = Point.new(1, 1)
+    assert_equal 1, segment.distance_to(point)
+  end
+
 end
