@@ -71,7 +71,7 @@ module Geometry
       p1 = point1.to_vector
       p2 = point2.to_vector
 
-      return Geometry.distance(q, p1) if p1==p2
+      return Geometry.distance(q, p1) if p1 == p2
 
       u = p2 - p1
       v = q - p1
