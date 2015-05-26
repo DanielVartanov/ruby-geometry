@@ -43,7 +43,7 @@ module Geometry
     end
 
     def good_ray?(ray)
-      edges.none? { |edge| edge.parallel_to?(ray) } && vertices.none? { |vertex| ray.contains_point?(vertex) }
+      edges.none? { |edge| !edge.length.zero? && edge.parallel_to?(ray) } && vertices.none? { |vertex| ray.contains_point?(vertex) }
     end
     
     def intersection_count(ray)
