@@ -15,6 +15,13 @@ module Geometry
     def advance_by(vector)
       Point x + vector.x, y + vector.y
     end
+    def distance_to(point)
+      x0 = x
+      y0 = y
+      x1 = point.x
+      y1 = point.y
+      Math.sqrt((x1-x0)*(x1-x0)+(y1-y0)*(y1-y0))
+    end
   end
 end
 
