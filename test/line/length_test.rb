@@ -11,4 +11,6 @@ class SlopeTest < MiniTest::Unit::TestCase
     assert_equal 5, point1.distance_to(point2)
     assert_equal 5, line.length
   end
+
 end
+
