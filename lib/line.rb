@@ -89,5 +89,9 @@ module Geometry
 
       (((x2-x1)*(y1-y0))-((x1-x0)*(y2-y1))).abs/Math.sqrt((x2-x1)**2+(y2-y1)**2)
     end
+
+    def length
+      point1.distance_to(point2)
+    end
   end
 end
