@@ -18,7 +18,7 @@ class SlopeTest < Minitest::Test
   def test_vertical_negative
     [-1, 0, 1].each do |x|
       line = Line.new(Point.new(x, 0), Point.new(x, -1))
-      assert_equal -@inf, line.slope
+      assert_equal (-@inf), line.slope
     end
   end
 
