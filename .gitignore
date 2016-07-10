@@ -3,3 +3,5 @@ bin/*
 pkg
 .idea
 Gemfile.lock
+/Gemfile_activesupport_4.lock
+/Gemfile_activesupport_5.lock
