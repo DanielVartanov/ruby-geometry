@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class XInterceptTest < MiniTest::Unit::TestCase
+class XInterceptTest < Minitest::Test
   include Geometry
 
   def setup

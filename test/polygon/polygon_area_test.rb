@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class PolygonAreaTest < MiniTest::Unit::TestCase
+class PolygonAreaTest < Minitest::Test
   include Geometry
   def test_area_of_empty_polygon
     polygon = Polygon.new []

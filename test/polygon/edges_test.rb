@@ -1,9 +1,9 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class EdgesTest < MiniTest::Unit::TestCase
+class EdgesTest < Minitest::Test
   include Geometry
-  
+
 #  +-----+
 #  |     |
 #  |     |
@@ -15,7 +15,7 @@ class EdgesTest < MiniTest::Unit::TestCase
       Point.new(1, 1),
       Point.new(0, 1)
     ]
-    
+
     polygon = Polygon.new(vertices)
 
     expected_edges = [
@@ -25,9 +25,9 @@ class EdgesTest < MiniTest::Unit::TestCase
       Segment.new_by_arrays(vertices[3], vertices[0])
     ]
 
-    assert_equal expected_edges, polygon.edges    
+    assert_equal expected_edges, polygon.edges
   end
-  
+
 #           /\
 #          /  \
 #    -----------
@@ -52,5 +52,5 @@ class EdgesTest < MiniTest::Unit::TestCase
 
     assert_equal expected_edges, polygon.edges
   end
-  
+
 end

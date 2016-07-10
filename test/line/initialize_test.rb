@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class InitializeTest < MiniTest::Unit::TestCase
+class InitializeTest < Minitest::Test
   include Geometry
 
   def test_initialize_by_points

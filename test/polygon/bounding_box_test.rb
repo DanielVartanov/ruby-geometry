@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class BoundingBoxTest < MiniTest::Unit::TestCase
+class BoundingBoxTest < Minitest::Test
   include Geometry
 
   def test_rectangle
@@ -22,7 +22,7 @@ class BoundingBoxTest < MiniTest::Unit::TestCase
                        Point(1, 0),
                        Point(0, 1)
                       ]
-    
+
     assert polygon.bounding_box.leftbottom == Point(-1, -1)
     assert polygon.bounding_box.righttop == Point(1, 1)
   end

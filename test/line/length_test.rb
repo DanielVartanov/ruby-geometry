@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class SlopeTest < MiniTest::Unit::TestCase
+class SlopeTest < Minitest::Test
   include Geometry
 
   def test_length
@@ -13,4 +13,3 @@ class SlopeTest < MiniTest::Unit::TestCase
   end
 
 end
-

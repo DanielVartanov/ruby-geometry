@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class IntersectsTest < MiniTest::Unit::TestCase
+class IntersectsTest < Minitest::Test
   include Geometry
 
   #      |
@@ -25,7 +25,7 @@ class IntersectsTest < MiniTest::Unit::TestCase
 
     assert ! segment1.intersects_with?(segment2)
   end
-  
+
   # ---
   #  |
   #  |
@@ -45,7 +45,7 @@ class IntersectsTest < MiniTest::Unit::TestCase
   def test_segment_contains_endpoint
     segment1 = Segment.new_by_arrays([0, 0], [2, 2])
     segment2 = Segment.new_by_arrays([0, 0], [2, 0])
-    
+
     assert segment1.intersects_with?(segment2)
   end
 
@@ -65,15 +65,15 @@ class IntersectsTest < MiniTest::Unit::TestCase
 
     assert segment1.intersects_with?(segment2)
   end
-  
+
   # |----|===|----|
   def test_segments_overlap
     segment1 = Segment.new_by_arrays([0, 0], [2, 0])
     segment2 = Segment.new_by_arrays([1, 0], [3, 0])
-    
+
     assert segment1.intersects_with?(segment2)
   end
-  
+
   def test_segments_overlap_on_vertical_line
     segment1 = Segment.new_by_arrays([0, 0], [0, 2])
     segment2 = Segment.new_by_arrays([0, 1], [0, 3])

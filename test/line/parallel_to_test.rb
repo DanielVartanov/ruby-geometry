@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class ParallelToTest < MiniTest::Unit::TestCase
+class ParallelToTest < Minitest::Test
   include Geometry
 
   def test_identical

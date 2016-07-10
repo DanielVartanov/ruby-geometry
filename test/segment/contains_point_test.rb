@@ -1,17 +1,17 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class ContainsPointTest < MiniTest::Unit::TestCase
+class ContainsPointTest < Minitest::Test
   include Geometry
 
   #  ----*----
   def test_point_belongs_to_horizontal_segment
     point = Point.new(3, 1)
     segment = Segment.new_by_arrays([2, 1], [4, 1])
-    
+
     assert segment.contains_point?(point)
   end
-  
+
   #     /
   #    *
   #   /
@@ -29,7 +29,7 @@ class ContainsPointTest < MiniTest::Unit::TestCase
 
     assert segment.contains_point?(point)
   end
-  
+
   #      *
   #  ---------
   def test_piont_does_not_belong_to_segment
@@ -38,7 +38,7 @@ class ContainsPointTest < MiniTest::Unit::TestCase
 
     assert ! segment.contains_point?(point)
   end
-  
+
   # *  ---------
   def test_point_on_same_horizontal_line
     point = Point.new(1, 1)
@@ -46,7 +46,7 @@ class ContainsPointTest < MiniTest::Unit::TestCase
 
     assert ! segment.contains_point?(point)
   end
-  
+
   #     /
   #    /
   #   /
@@ -57,5 +57,5 @@ class ContainsPointTest < MiniTest::Unit::TestCase
     segment = Segment.new_by_arrays([2, 2], [4, 4])
 
     assert ! segment.contains_point?(point)
-  end  
+  end
 end

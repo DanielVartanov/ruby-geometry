@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class ContainsPointTest < MiniTest::Unit::TestCase
+class ContainsPointTest < Minitest::Test
   include Geometry
 
   def test_convex
@@ -11,7 +11,7 @@ class ContainsPointTest < MiniTest::Unit::TestCase
                              Point(1, 1),
                              Point(0, 1)
                             ]
-    
+
 
     inner = Point(0.5, 0.5)
     assert rectangle.contains?(inner)
@@ -25,7 +25,7 @@ class ContainsPointTest < MiniTest::Unit::TestCase
     at_vertex = Point(1, 1)
     assert rectangle.contains?(at_vertex)
   end
-  
+
 
   # +--------+
   # |        |
@@ -33,7 +33,7 @@ class ContainsPointTest < MiniTest::Unit::TestCase
   # |    |
   # |    +---+
   # |        |
-  # +--------+ 
+  # +--------+
 
   def test_nonconvex
     nonconvex_polygon = Polygon.new [

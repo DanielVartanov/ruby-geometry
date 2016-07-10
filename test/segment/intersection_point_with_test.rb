@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class IntersectionPointWithTest < MiniTest::Unit::TestCase
+class IntersectionPointWithTest < Minitest::Test
   include Geometry
 
   def test_regular_case

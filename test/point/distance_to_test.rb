@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class DistanceToTest < MiniTest::Unit::TestCase
+class DistanceToTest < Minitest::Test
   include Geometry
 
   # Distance in whole number

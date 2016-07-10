@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class AdvanceByTest < MiniTest::Unit::TestCase
+class AdvanceByTest < Minitest::Test
   include Geometry
 
   def test_advance_by

@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class OverlapsTest < MiniTest::Unit::TestCase
+class OverlapsTest < Minitest::Test
   include Geometry
 
   def test_overlaps

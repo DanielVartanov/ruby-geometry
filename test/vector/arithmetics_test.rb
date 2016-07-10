@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class ArithmeticsTest < MiniTest::Unit::TestCase
+class ArithmeticsTest < Minitest::Test
   include Geometry
 
   def test_summation
@@ -13,7 +13,7 @@ class ArithmeticsTest < MiniTest::Unit::TestCase
   end
 
   def test_vector_multiplied_by_scalar
-    assert_equal Vector.new(-2, -4), Vector.new(1, 2) * -2    
+    assert_equal Vector.new(-2, -4), Vector.new(1, 2) * -2
   end
 
   def test_scalar_multiplied_by_vector

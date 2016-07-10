@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class VerticalTest < MiniTest::Unit::TestCase
+class VerticalTest < Minitest::Test
   include Geometry
 
   def test_vertical

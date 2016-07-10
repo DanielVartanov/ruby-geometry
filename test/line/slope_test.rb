@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class SlopeTest < MiniTest::Unit::TestCase
+class SlopeTest < Minitest::Test
   include Geometry
 
   def setup
@@ -46,7 +46,7 @@ class SlopeTest < MiniTest::Unit::TestCase
       y = radius*Math::sin(angle)
       x = radius*Math::cos(angle)
       line = Line.new(Point.new(0, 0), Point.new(x, y))
-      
+
       assert_in_delta Math::tan(angle), line.slope, delta
     end
   end

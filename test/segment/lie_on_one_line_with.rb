@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class IntersectsTest < MiniTest::Unit::TestCase
+class IntersectsTest < Minitest::Test
   include Geometry
 
   def test_segments_parralel_but_on_different_lines
@@ -17,7 +17,7 @@ class IntersectsTest < MiniTest::Unit::TestCase
 
     assert ! segment1.lies_on_one_line_with?(segment2)
   end
-    
+
   def test_segments_lie_on_one_line
     segment1 = Segment.new_by_arrays([0, 0], [1, 0])
     segment2 = Segment.new_by_arrays([2, 0], [3, 0])

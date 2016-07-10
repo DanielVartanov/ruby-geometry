@@ -1,9 +1,9 @@
 require 'minitest/autorun'
 require 'geometry'
 
-class LengthTest < MiniTest::Unit::TestCase
+class LengthTest < Minitest::Test
   include Geometry
-  
+
   def test_parallel_to_axis
     assert 1 === Segment.new_by_arrays([1, 1], [2, 1]).length
     assert 1 === Segment.new_by_arrays([1, 1], [1, 2]).length
