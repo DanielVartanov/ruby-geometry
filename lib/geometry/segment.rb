@@ -1,10 +1,10 @@
 module Geometry
   class SegmentsDoNotIntersect < Exception; end
   class SegmentsOverlap < Exception; end
-  
+
   class Segment < Struct.new(:point1, :point2)
     def self.new_by_arrays(point1_coordinates, point2_coordinates)
-      self.new(Point.new_by_array(point1_coordinates), 
+      self.new(Point.new_by_array(point1_coordinates),
                Point.new_by_array(point2_coordinates))
     end
 
@@ -23,8 +23,8 @@ module Geometry
     def bottommost_endpoint
       ((point1.y <=> point2.y) == -1) ? point1 : point2
     end
- 
-    def contains_point?(point)      
+
+    def contains_point?(point)
       Geometry.distance(point1, point2) ===
         Geometry.distance(point1, point) + Geometry.distance(point, point2)
     end
@@ -43,26 +43,30 @@ module Geometry
         lies_on_line_intersecting?(segment) &&
         segment.lies_on_line_intersecting?(self)
     end
-    
+
     def overlaps?(segment)
       Segment.have_intersecting_bounds?(self, segment) &&
         lies_on_one_line_with?(segment)
     end
-    
+
     def intersection_point_with(segment)
       raise SegmentsDoNotIntersect unless intersects_with?(segment)
       raise SegmentsOverlap if overlaps?(segment)
-      
+
       numerator = (segment.point1.y - point1.y) * (segment.point1.x - segment.point2.x) -
         (segment.point1.y - segment.point2.y) * (segment.point1.x - point1.x);
-      denominator = (point2.y - point1.y) * (segment.point1.x - segment.point2.x) - 
+      denominator = (point2.y - point1.y) * (segment.point1.x - segment.point2.x) -
         (segment.point1.y - segment.point2.y) * (point2.x - point1.x);
 
-      t = numerator.to_f / denominator;
-      
+      if numerator.is_a?(Integer) && denominator.is_a?(Integer)
+        numerator = numerator.to_f
+      end
+
+      t = numerator / denominator;
+
       x = point1.x + t * (point2.x - point1.x)
-      y = point1.y + t * (point2.y - point1.y)            
-      
+      y = point1.y + t * (point2.y - point1.y)
+
       Point.new(x, y)
     end
 
@@ -91,13 +95,13 @@ module Geometry
       return Geometry.distance(q, p)
     end
 
-    def length      
+    def length
       Geometry.distance(point1, point2)
     end
 
     def to_vector
       Vector.new(point2.x - point1.x, point2.y - point1.y)
-    end        
+    end
 
   protected
 
@@ -107,7 +111,7 @@ module Geometry
         segment1.leftmost_endpoint.x == segment2.rightmost_endpoint.x) &&
         (segment2.leftmost_endpoint.x < segment1.rightmost_endpoint.x ||
         segment2.leftmost_endpoint.x == segment1.rightmost_endpoint.x)
-    
+
       intersects_on_y_axis =
         (segment1.bottommost_endpoint.y < segment2.topmost_endpoint.y ||
         segment1.bottommost_endpoint.y == segment2.topmost_endpoint.y) &&
