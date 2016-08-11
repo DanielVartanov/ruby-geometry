@@ -4,8 +4,8 @@ module Geometry
 
   class Segment < Struct.new(:point1, :point2)
     def self.new_by_arrays(point1_coordinates, point2_coordinates)
-      self.new(Point.new_by_array(point1_coordinates),
-               Point.new_by_array(point2_coordinates))
+      new(Point.new_by_array(point1_coordinates),
+          Point.new_by_array(point2_coordinates))
     end
 
     def leftmost_endpoint
@@ -55,14 +55,15 @@ module Geometry
 
       numerator = (segment.point1.y - point1.y) * (segment.point1.x - segment.point2.x) -
         (segment.point1.y - segment.point2.y) * (segment.point1.x - point1.x);
-      denominator = (point2.y - point1.y) * (segment.point1.x - segment.point2.x) -
+      denominator = (point2.y - point1.y) *
+        (segment.point1.x - segment.point2.x) -
         (segment.point1.y - segment.point2.y) * (point2.x - point1.x);
 
       if numerator.is_a?(Integer) && denominator.is_a?(Integer)
         numerator = numerator.to_f
       end
 
-      t = numerator / denominator;
+      t = numerator / denominator
 
       x = point1.x + t * (point2.x - point1.x)
       y = point1.y + t * (point2.y - point1.y)

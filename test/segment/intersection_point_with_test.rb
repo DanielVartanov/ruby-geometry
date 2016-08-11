@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'geometry'
-require 'bigdecimal'
+require "bigdecimal"
 
 class IntersectionPointWithTest < Minitest::Test
   include Geometry
@@ -20,14 +20,18 @@ class IntersectionPointWithTest < Minitest::Test
   end
 
   def test_big_decimal_segments_intersect_at_the_endpoint
-    segment1 = Segment.new_by_arrays([BigDecimal.new('-109.775390625'), BigDecimal.new('42.734102391081')],
-                                     [BigDecimal.new('-91.23046875'), BigDecimal.new('42.734102391081')])
+    segment1 = Segment.new_by_arrays([BigDecimal.new("-109.775390625"),
+                                      BigDecimal.new("42.734102391081")],
+                                     [BigDecimal.new("-91.23046875"),
+                                      BigDecimal.new("42.734102391081")])
 
-    segment2 = Segment.new_by_arrays([BigDecimal.new('-91.23046875'), BigDecimal.new('42.734102391081')],
-                                     [BigDecimal.new('-91.23046875'), BigDecimal.new('34.147272023649')])
+    segment2 = Segment.new_by_arrays([BigDecimal.new("-91.23046875"),
+                                      BigDecimal.new("42.734102391081")],
+                                     [BigDecimal.new("-91.23046875"),
+                                      BigDecimal.new("34.147272023649")])
 
-
-    assert_equal Point.new(BigDecimal.new('-91.23046875'), BigDecimal.new('42.734102391081')),
+    assert_equal Point.new(BigDecimal.new("-91.23046875"),
+                           BigDecimal.new("42.734102391081")),
                  segment1.intersection_point_with(segment2)
   end
 
