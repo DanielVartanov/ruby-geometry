@@ -56,8 +56,9 @@ module Geometry
       numerator = (segment.point1.y - point1.y) * (segment.point1.x - segment.point2.x) -
         (segment.point1.y - segment.point2.y) * (segment.point1.x - point1.x);
       denominator = (point2.y - point1.y) *
-        (segment.point1.x - segment.point2.x) -
-        (segment.point1.y - segment.point2.y) * (point2.x - point1.x);
+                    (segment.point1.x - segment.point2.x) -
+                    (segment.point1.y - segment.point2.y) *
+                    (point2.x - point1.x);
 
       if numerator.is_a?(Integer) && denominator.is_a?(Integer)
         numerator = numerator.to_f
