@@ -16,4 +16,4 @@ matrix:
   - rvm: jruby
     gemfile: Gemfile
   - rvm: jruby
-    gemfile: gemfile/Gemfile.activesupport-5
+    gemfile: gemfiles/Gemfile.activesupport-5
