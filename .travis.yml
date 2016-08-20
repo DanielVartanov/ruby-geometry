@@ -8,5 +8,12 @@ rvm:
 
 gemfile:
   - Gemfile
-  - Gemfile_activesupport_4
-  - Gemfile_activesupport_5
+  - gemfiles/Gemfile.activesupport-4
+  - gemfiles/Gemfile.activesupport-5
+
+matrix:
+  allow_failures:
+  - rvm: jruby
+    gemfile: Gemfile
+  - rvm: jruby
+    gemfile: gemfile/Gemfile.activesupport-5
